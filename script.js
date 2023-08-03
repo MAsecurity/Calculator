@@ -59,7 +59,39 @@ function operation(operationValue) {
   currentOperandText = '';
 }
 
+//Add an event listener to the equal button and if clicked call the compute function.
+//Check in the compute function if the operation is not equal to null
+//Then use switch operators to calculate prev and current values based on given operator
+//In the case of divide check for the possible case of dividing by zero and prevent computing it.
 
+dataEquals.addEventListener("click", () => {
+  compute();
+  updateDisplay();
+  
+});
+
+
+function compute() {
+  if (operationOperand != null) {
+    switch(operationOperand) {
+      case "/":
+        if(previousOperandText === "0" || currentOperandText === "0") {
+          currentOperandText = "Cannot divide by 0";
+        }else {
+          currentOperandText = parseFloat(previousOperandText) / parseFloat(currentOperandText);
+        }
+        break;
+      case "*":
+        currentOperandText = parseFloat(previousOperandText) * parseFloat(currentOperandText);
+        break;
+      case "+":
+        currentOperandText = parseFloat(previousOperandText) + parseFloat(currentOperandText);
+        break;
+      case "-":
+        currentOperandText = parseFloat(previousOperandText) -  parseFloat(currentOperandText);
+    }
+  }
+}
 
 function updateDisplay() {
   dataCurrentOperand.textContent = currentOperandText;
