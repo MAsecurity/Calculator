@@ -101,6 +101,21 @@ dataAllClear.addEventListener("click", () => {
   updateDisplay();
 })
 
+// Add an event listener to the delete button and if clicked remove the last character.
+
+dataDelete.addEventListener("click", () => {
+  dataDeletefunc();
+  updateDisplay();
+
+
+});
+
+function dataDeletefunc() {
+  currentOperandText = currentOperandText.split('').slice(0,-1).join('');
+
+
+}
+
 function updateDisplay() {
   dataCurrentOperand.textContent = currentOperandText;
   dataPreviousOperand.textContent = previousOperandText;
