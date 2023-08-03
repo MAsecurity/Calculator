@@ -1,5 +1,5 @@
 # Calculator
-Live demo &#128073; https://masecurity.github.io/Calculator/
+Live demo &#128073;  https://masecurity.github.io/Calculator/
 ## What is a Calculator?
 A calculator is a simple electronic or digital device used to perform mathematical calculations. It allows users to perform basic arithmetic operations like addition, subtraction, multiplication, and division, as well as more complex calculations involving percentages, square roots, and more. Calculators are widely used in various fields, including education, finance, engineering, science, and everyday life.
 
