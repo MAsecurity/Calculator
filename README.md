@@ -1,5 +1,5 @@
 # Calculator
-Live demo &#128073; 
+Live demo &#128073; https://masecurity.github.io/Calculator/
 ## What is a Calculator?
 A calculator is a simple electronic or digital device used to perform mathematical calculations. It allows users to perform basic arithmetic operations like addition, subtraction, multiplication, and division, as well as more complex calculations involving percentages, square roots, and more. Calculators are widely used in various fields, including education, finance, engineering, science, and everyday life.
 
@@ -13,9 +13,8 @@ This project is a simple web-based calculator implemented using HTML, CSS, and J
 - <strong>JavaScript Functions:</strong> I implemented various JavaScript functions to handle different aspects of the calculator's functionality, including number input, arithmetic   operations, and clearing the display.
 - <strong>Switch Statements:</strong> I used switch statements to perform different operations based on the selected arithmetic operator.
 - <strong>Data Attributes:</strong> I utilized data attributes in HTML to attach relevant data to elements, making it easier to select and interact with them in JavaScript.
-- <strong>CSS Grid Layout:</strong> I utilized CSS grid layout to create a simple and responsive calculator layout, arranging buttons and display elements in a grid.
+- <strong>CSS Grid Layout:</strong> I utilized CSS grid layout to create a simple calculator layout, arranging buttons and display elements in a grid.
 - <strong>Styling with CSS:</strong> I applied styles to the calculator using CSS, including button appearance on hover and click.
 - <strong>Error Handling:</strong> I added a check to prevent division by zero and displayed an error message when attempting such an operation.
-- <strong>Basic Web Page Structure:</strong> I gained familiarity with the basic structure of an HTML document, including the head section, body section, and linking external CSS and JavaScript files.
 
 Overall, this project provided a hands-on learning experience in web development fundamentals, enabling me to create a functional calculator application using HTML, CSS, and JavaScript.
