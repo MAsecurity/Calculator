@@ -50,9 +50,13 @@ dataOperations.forEach(operationBtn => {
   });
 })
 //If clicked change the operation global variable, in the operation function
+//Check incase the currentOperandText is empty and if so return nothing, else..
 //Set previousOperandText to currentOperandText and set currentOperandText to empty
 //And call the update display function.
 function operation(operationValue) {
+  if (currentOperandText === '') {
+    return;
+  }
   operationOperand = operationValue.toString();
   previousOperandText = currentOperandText;
   currentOperandText = '';
