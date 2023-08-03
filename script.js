@@ -118,7 +118,13 @@ function dataDeletefunc() {
 
 function updateDisplay() {
   dataCurrentOperand.textContent = currentOperandText;
-  dataPreviousOperand.textContent = previousOperandText;
+  if (operationOperand != null) {
+    dataPreviousOperand.textContent = `${previousOperandText} ${operationOperand}`;
+
+  }else {
+    dataPreviousOperand.textContent = previousOperandText;
+
+  }
 }
 
 
