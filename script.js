@@ -22,9 +22,6 @@ function clear() {
 clear();
 
 //Loop over all numbers and add event listeners.
-//Create a number function which takes the number and modifes the currentoperandtext to include the number.
-//Prevent the decimal from being entered more than once.
-//Then update the records using an update display function that should be at the very bottom.
 dataNumbers.forEach(numberBtn => {
   numberBtn.addEventListener("click",function () {
     number(numberBtn.textContent);
@@ -33,7 +30,9 @@ dataNumbers.forEach(numberBtn => {
 
   })
 })
-
+//Create a number function which takes the number and modifes the currentoperandtext to include the number.
+//Prevent the decimal from being entered more than once.
+//Then update the records using an update display function that should be at the very bottom.
 function number(num) {
   if(num === "."  && currentOperandText.includes(".")){
     return;
@@ -43,17 +42,16 @@ function number(num) {
 
 }
 
-//Loop over the operations and check if the operation button was clicked
-//If clicked change the operation global variable, in the operation function
-//Set previousOperandText to currentOperandText and set currentOperandText to empty
-//And call the update display function.
+//Loop over the operations and add event listeneres 
 dataOperations.forEach(operationBtn => {
   operationBtn.addEventListener("click",() => {
     operation(operationBtn.textContent);
     updateDisplay();
   });
 })
-
+//If clicked change the operation global variable, in the operation function
+//Set previousOperandText to currentOperandText and set currentOperandText to empty
+//And call the update display function.
 function operation(operationValue) {
   operationOperand = operationValue.toString();
   previousOperandText = currentOperandText;
@@ -61,69 +59,67 @@ function operation(operationValue) {
 }
 
 //Add an event listener to the equal button and if clicked call the compute function.
-//Check in the compute function if the operation is not equal to null
-//Then use switch operators to calculate prev and current values based on given operator
-//In the case of divide check for the possible case of dividing by zero and prevent computing it.
-
 dataEquals.addEventListener("click", () => {
   compute();
   updateDisplay();
   
 });
 
-
+//Check in the compute function if the operation is not equal to null
+//Then use switch operators to calculate prev and current values based on given operator
+//In the case of divide check for the possible case of dividing by zero and prevent computing it.
 function compute() {
+  let result;
   if (operationOperand != null) {
     switch(operationOperand) {
       case "/":
         if(previousOperandText === "0" || currentOperandText === "0") {
-          currentOperandText = "Cannot divide by 0";
+          result = "Cannot divide by 0";
         }else {
-          currentOperandText = parseFloat(previousOperandText) / parseFloat(currentOperandText);
+          result = parseFloat(previousOperandText) / parseFloat(currentOperandText);
         }
         break;
       case "*":
-        currentOperandText = parseFloat(previousOperandText) * parseFloat(currentOperandText);
+        result = parseFloat(previousOperandText) * parseFloat(currentOperandText);
         break;
       case "+":
-        currentOperandText = parseFloat(previousOperandText) + parseFloat(currentOperandText);
+        result = parseFloat(previousOperandText) + parseFloat(currentOperandText);
         break;
       case "-":
-        currentOperandText = parseFloat(previousOperandText) -  parseFloat(currentOperandText);
+        result = parseFloat(previousOperandText) -  parseFloat(currentOperandText);
+        break;
+      default:
+        return;
     }
   }
+  currentOperandText = result.toString()
+  previousOperandText = '';
+  operationOperand = undefined;
+
+
 }
 
 // Add an event listener to the all-clear button and clear the records if clicked.
-
 dataAllClear.addEventListener("click", () => {
   clear();
   updateDisplay();
 })
 
 // Add an event listener to the delete button and if clicked remove the last character.
-
 dataDelete.addEventListener("click", () => {
   dataDeletefunc();
   updateDisplay();
-
-
 });
-
 function dataDeletefunc() {
   currentOperandText = currentOperandText.split('').slice(0,-1).join('');
-
-
 }
 
 function updateDisplay() {
   dataCurrentOperand.textContent = currentOperandText;
   if (operationOperand != null) {
     dataPreviousOperand.textContent = `${previousOperandText} ${operationOperand}`;
-
   }else {
-    dataPreviousOperand.textContent = previousOperandText;
-
+    dataPreviousOperand.textContent = '';
   }
 }
 
