@@ -14,8 +14,9 @@ const dataOperations = document.querySelectorAll("[data-operation]");
 
 //Clear all records by default
 function clear() {
-  dataCurrentOperand.textContent = currentOperandText;
-  dataPreviousOperand.textContent = previousOperandText;
+  currentOperandText = '';
+  previousOperandText = '';
+  operationOperand = undefined;
 }
 
 clear();
@@ -92,6 +93,13 @@ function compute() {
     }
   }
 }
+
+// Add an event listener to the all-clear button and clear the records if clicked.
+
+dataAllClear.addEventListener("click", () => {
+  clear();
+  updateDisplay();
+})
 
 function updateDisplay() {
   dataCurrentOperand.textContent = currentOperandText;
