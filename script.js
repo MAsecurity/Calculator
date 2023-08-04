@@ -33,13 +33,17 @@ dataNumbers.forEach(numberBtn => {
 //Create a number function which takes the number and modifes the currentoperandtext to include the number.
 //Prevent the decimal from being entered more than once.
 //Then update the records using an update display function that should be at the very bottom.
+//Check if the currentNumber has been set to cannot divide by 0 and if so if the user enters a number everything is cleared.
 function number(num) {
   if(num === "."  && currentOperandText.includes(".")){
     return;
+  }else if (currentOperandText.includes('Cannot divide by 0')) {
+    clear();
+    updateDisplay();
+
+  }else{
+    currentOperandText = currentOperandText.toString() + num.toString();
   }
-  currentOperandText = currentOperandText.toString() + num.toString();
-
-
 }
 
 //Loop over the operations and add event listeneres 
