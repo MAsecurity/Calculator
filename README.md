@@ -1,6 +1,6 @@
 # Calculator
 Live demo &#128073;  https://masecurity.github.io/Calculator/
-## What is a Calculator?
+## What is this project about ?
 A calculator is a simple electronic or digital device used to perform mathematical calculations. It allows users to perform basic arithmetic operations like addition, subtraction, multiplication, and division, as well as more complex calculations involving percentages, square roots, and more. Calculators are widely used in various fields, including education, finance, engineering, science, and everyday life.
 
 This project is a simple web-based calculator implemented using HTML, CSS, and JavaScript. It provides a user interface with buttons for numbers, basic arithmetic operations, and a display to show the current and previous operands along with the result of calculations.
